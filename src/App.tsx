@@ -1,18 +1,30 @@
 import * as React from 'react';
 import './App.css';
-import logo from './logo.svg';
 
 class App extends React.Component {
+
+    getReservations() {
+        // database.collection("reservations")
+        //     .onSnapshot(function(querySnapshot: QuerySnapshot) {
+        //         querySnapshot.forEach(function(doc) {
+        //             console.log(doc.data())
+        //         });
+        //     });
+
+    }
+
+
+    public onClick(): void {
+        // db.collection('reservations').add({
+        //     test: 'test'
+        // }).then(() => console.log('test'))
+    };
+
     public render() {
         return (
                 <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">Welcome to React</h1>
-                    </header>
-                    <p className="App-intro">
-                        To get stsartedd, edit <code>src/App.tsx</code> and save to reload.
-                    </p>
+
+                    <button onClick={this.onClick}>Test</button>
                 </div>
         );
     }

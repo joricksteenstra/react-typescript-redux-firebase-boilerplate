@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@types/react-router": "^4.4.1",
+    "@types/react-router-dom": "^4.3.1",
     "@types/react-router-redux": "^5.0.16",
+    "firebase": "^5.5.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
