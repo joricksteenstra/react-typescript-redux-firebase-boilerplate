@@ -1,23 +1,13 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import {bindActionCreators} from "redux";
+import {fetchReservations} from "./actions/firebaseActions";
 import './App.css';
 
-class App extends React.Component {
+class App extends React.Component<any, any> {
 
-    getReservations() {
-        // database.collection("reservations")
-        //     .onSnapshot(function(querySnapshot: QuerySnapshot) {
-        //         querySnapshot.forEach(function(doc) {
-        //             console.log(doc.data())
-        //         });
-        //     });
-
-    }
-
-
-    public onClick(): void {
-        // db.collection('reservations').add({
-        //     test: 'test'
-        // }).then(() => console.log('test'))
+    public onClick = (): void => {
+        this.props.fetchReservations();
     };
 
     public render() {
@@ -30,4 +20,14 @@ class App extends React.Component {
     }
 }
 
-export default App;
+function mapDispatchToProps(dispatch: any) {
+    return bindActionCreators({ fetchReservations }, dispatch);
+}
+
+
+function mapStateToProps(state: any) {
+    return { reservations: state.reservations };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

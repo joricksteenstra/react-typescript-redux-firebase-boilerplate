@@ -1,0 +1,1 @@
+export const FETCH_RESERVATIONS: string = 'FETCH_RESERVATIONS';
