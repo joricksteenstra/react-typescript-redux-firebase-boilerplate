@@ -1,9 +1,6 @@
-import * as firebase from 'firebase';
 import {
-FETCH_RESERVATIONS,
+SET_RESERVATIONS,
 } from '../actions/types';
-import {FireBaseManager} from "../utils/firebase";
-import QuerySnapshot = firebase.firestore.QuerySnapshot;
 
 interface IAction {
     type: string,
@@ -17,18 +14,13 @@ const initialState = {
 export default function (state = initialState, action: IAction) {
     switch (action.type) {
 
-        case FETCH_RESERVATIONS:
-            return fetchReservations();
+        case SET_RESERVATIONS:
+            return {
+                ...state,
+                reservations: action.data
+            };
 
         default:
             return state;
     }
-}
-
-function fetchReservations() {
-    FireBaseManager.getFireStoreReference('reservations')
-        .onSnapshot((querySnapshot: QuerySnapshot) => {
-            return querySnapshot;
-        });
-    ;
 }

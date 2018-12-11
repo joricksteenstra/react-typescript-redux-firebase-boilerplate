@@ -1,7 +1,8 @@
-import {FETCH_RESERVATIONS} from "./types";
+import {SET_RESERVATIONS} from "./types";
 
-export function fetchReservations() {
+export function setReservations(reservations: any[]) {
     return {
-        type: FETCH_RESERVATIONS
+        type: SET_RESERVATIONS,
+        data: reservations
     };
 }

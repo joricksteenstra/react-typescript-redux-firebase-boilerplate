@@ -1,1 +1,1 @@
-export const FETCH_RESERVATIONS: string = 'FETCH_RESERVATIONS';
+export const SET_RESERVATIONS: string = 'SET_RESERVATIONS';
