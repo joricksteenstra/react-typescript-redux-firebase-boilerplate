@@ -7,7 +7,7 @@ import {FireBaseManager} from "../utils/firebase";
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
 
 class Overview extends React.Component<any, any> {
-    public _fetchReservations = () => {
+    public fetchReservations = (): void => {
         FireBaseManager.getFireStoreReference('reservations')
             .onSnapshot((querySnapshot: QuerySnapshot) => {
                 const reservations: any[] = [];
@@ -19,10 +19,10 @@ class Overview extends React.Component<any, any> {
     };
 
     public componentDidMount() {
-        this._fetchReservations();
+        this.fetchReservations();
     }
 
-    public _addReservation(): void {
+    public addReservation = (): void => {
         FireBaseManager.getFireStoreReference('reservations').add({
             test: '123'
         })
@@ -31,7 +31,7 @@ class Overview extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <button onClick={this._addReservation}>Klik hier voor meer!</button>
+                <button onClick={this.addReservation}>Klik hier voor meer!</button>
                 <ul>
                     {this.props.reservations && this.props.reservations.map((reservation: any) => (
                             <li key={reservation.test}> {reservation.test}</li>

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efc4e49c-6e0e-4553-9709-1f5ae3f91dd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/firebaseActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/firebaseActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/firebaseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/firebaseReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,7 +28,7 @@
           <entry key="js" value="3" />
           <entry key="json" value="8" />
           <entry key="svg" value="1" />
-          <entry key="ts" value="7" />
+          <entry key="ts" value="8" />
           <entry key="tsx" value="4" />
         </counts>
       </usages-collector>
@@ -42,7 +38,7 @@
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SVG" value="1" />
-          <entry key="TypeScript" value="7" />
+          <entry key="TypeScript" value="8" />
           <entry key="TypeScript JSX" value="4" />
           <entry key="tsconfig" value="2" />
         </counts>
@@ -52,8 +48,8 @@
           <entry key="js" value="216" />
           <entry key="json" value="47" />
           <entry key="svg" value="8" />
-          <entry key="ts" value="928" />
-          <entry key="tsx" value="2229" />
+          <entry key="ts" value="1050" />
+          <entry key="tsx" value="2247" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -61,8 +57,8 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="216" />
           <entry key="SVG" value="8" />
-          <entry key="TypeScript" value="928" />
-          <entry key="TypeScript JSX" value="2229" />
+          <entry key="TypeScript" value="1050" />
+          <entry key="TypeScript JSX" value="2247" />
           <entry key="tsconfig" value="46" />
         </counts>
       </usages-collector>
@@ -88,14 +84,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Overview.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="159">
+              <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/config.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -165,18 +170,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -184,6 +177,9 @@
       <find>react-redux</find>
       <find>FETCH_RESERVATIONS</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -199,7 +195,6 @@
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/utils/firebase.js" />
-        <option value="$PROJECT_DIR$/src/config.ts" />
         <option value="$PROJECT_DIR$/src/utils/firebase.ts" />
         <option value="$PROJECT_DIR$/src/reducers/index.ts" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
@@ -210,6 +205,7 @@
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/actions/firebaseActions.ts" />
         <option value="$PROJECT_DIR$/src/components/Overview.tsx" />
+        <option value="$PROJECT_DIR$/src/config.ts" />
       </list>
     </option>
   </component>
@@ -229,11 +225,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1276" />
-    <option name="y" value="64" />
-    <option name="width" value="1280" />
-    <option name="height" value="1349" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="33" />
+    <option name="y" value="54" />
+    <option name="width" value="1597" />
+    <option name="height" value="929" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -317,21 +313,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544127519057</updated>
-      <workItem from="1544127522968" duration="12979000" />
+      <workItem from="1544127522968" duration="13816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12979000" />
+    <option name="totallyTimeSpent" value="13816000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1276" y="64" width="1280" height="1349" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="960" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Storybook" side_tool="true" />
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18927065" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -391,13 +387,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/firebase/index.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -485,11 +474,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Overview.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="159">
+          <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
