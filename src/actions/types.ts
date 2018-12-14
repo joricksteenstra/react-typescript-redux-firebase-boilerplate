@@ -1,1 +1,1 @@
-export const SET_RESERVATIONS: string = 'SET_RESERVATIONS';
+export const SET_OBJECTS: string = 'SET_OBJECTS';

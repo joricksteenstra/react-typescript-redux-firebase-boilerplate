@@ -1,8 +1,9 @@
-import {SET_RESERVATIONS} from "./types";
+import ObjectModel from "../models/ObjectModel";
+import {SET_OBJECTS} from "./types";
 
-export function setReservations(reservations: any[]) {
+export function setObjects(objects: ObjectModel[]) {
     return {
-        type: SET_RESERVATIONS,
-        data: reservations
+        data: objects,
+        type: SET_OBJECTS
     };
 }

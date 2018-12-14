@@ -1,0 +1,3 @@
+interface InterfaceObjectModel {
+    name:string
+}

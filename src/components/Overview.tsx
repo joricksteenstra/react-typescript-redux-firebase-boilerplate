@@ -2,53 +2,61 @@ import * as firebase from "firebase";
 import * as React from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {setReservations} from "../actions/firebaseActions";
-import {FireBaseManager} from "../utils/firebase";
+import {setObjects} from "../actions/firebaseActions";
+import ObjectModel from "../models/ObjectModel";
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import {FireBaseManager} from "../utils/firebase";
+import './Overview.css';
 
 class Overview extends React.Component<any, any> {
-    public fetchReservations = (): void => {
-        FireBaseManager.getFireStoreReference('reservations')
+    public fetchObjects = (): void => {
+        FireBaseManager.getFireStoreReference('objects')
             .onSnapshot((querySnapshot: QuerySnapshot) => {
-                const reservations: any[] = [];
+                const objects: ObjectModel[] = [];
                 querySnapshot.forEach((doc) => {
-                    reservations.push(doc.data());
+                    const name:string  = doc.data().name;
+                    const objectModel = new ObjectModel();
+                    objectModel.name = name;
+                    objects.push(objectModel);
                 });
-                this.props.setReservations(reservations);
+                this.props.setObjects(objects);
             });
     };
 
     public componentDidMount() {
-        this.fetchReservations();
+        this.fetchObjects();
     }
 
-    public addReservation = (): void => {
-        FireBaseManager.getFireStoreReference('reservations').add({
-            test: '123'
-        })
-    }
+    public addObjects = (): void => {
+        const objectModel = new ObjectModel();
+        objectModel.name = 'test';
 
-    render() {
+        FireBaseManager.getFireStoreReference('objects').add(Object.assign({}, objectModel));
+    };
+
+    public render() {
         return (
             <div>
-                <button onClick={this.addReservation}>Klik hier voor meer!</button>
-                <ul>
-                    {this.props.reservations && this.props.reservations.map((reservation: any) => (
-                            <li key={reservation.test}> {reservation.test}</li>
-                        )
-                    )}
-                </ul>
+                <button onClick={this.addObjects}>Click here to add test objects</button>
+                <div className="Overview-container">
+                    <ul>
+                        {this.props.objects && this.props.objects.map((object: ObjectModel) => (
+                                <li key={object.name}> {object.name}</li>
+                            )
+                        )}
+                    </ul>
+                </div>
             </div>
         );
     }
 }
 
 function mapDispatchToProps(dispatch: any) {
-    return bindActionCreators({setReservations}, dispatch);
+    return bindActionCreators({setObjects}, dispatch);
 }
 
 function mapStateToProps(state: any) {
-    return {reservations: state.firebaseReducer.reservations};
+    return {objects: state.firebaseReducer.objects};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Overview);

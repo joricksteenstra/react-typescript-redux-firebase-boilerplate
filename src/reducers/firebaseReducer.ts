@@ -1,5 +1,5 @@
 import {
-SET_RESERVATIONS,
+    SET_OBJECTS,
 } from '../actions/types';
 
 interface IAction {
@@ -8,16 +8,16 @@ interface IAction {
 }
 
 const initialState = {
-    reservations: [],
+    objects: [],
 };
 
 export default function (state = initialState, action: IAction) {
     switch (action.type) {
 
-        case SET_RESERVATIONS:
+        case SET_OBJECTS:
             return {
                 ...state,
-                reservations: action.data
+                objects: action.data
             };
 
         default:
