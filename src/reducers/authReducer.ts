@@ -1,5 +1,5 @@
 import {
-    SET_OBJECTS,
+    SET_CURRENT_USER,
 } from '../actions/types';
 
 interface IAction {
@@ -8,15 +8,19 @@ interface IAction {
 }
 
 const initialState = {
-    objects: [],
+    currentUser: {
+        email: null
+    },
+    isLoggedIn: false
 };
 
 export default function (state = initialState, action: IAction) {
     switch (action.type) {
-        case SET_OBJECTS:
+        case SET_CURRENT_USER:
             return {
                 ...state,
-                objects: action.data
+                currentUser: action.data.user,
+                isLoggedIn: !!action.data.user,
             };
 
         default:

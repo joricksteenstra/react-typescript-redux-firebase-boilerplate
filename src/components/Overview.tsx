@@ -1,6 +1,7 @@
 import * as firebase from "firebase";
 import * as React from 'react';
 import {connect} from "react-redux";
+import { Button } from 'reactstrap';
 import {bindActionCreators} from "redux";
 import {setObjects} from "../actions/firebaseActions";
 import ObjectModel from "../models/ObjectModel";
@@ -37,7 +38,7 @@ class Overview extends React.Component<any, any> {
     public render() {
         return (
             <div>
-                <button onClick={this.addObjects}>Click here to add test objects</button>
+                <Button onClick={this.addObjects} color="danger">Danger!</Button>
                 <div className="Overview-container">
                     <ul>
                         {this.props.objects && this.props.objects.map((object: ObjectModel) => (
