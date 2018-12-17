@@ -1,9 +1,10 @@
 import * as React from 'react';
 import {connect} from "react-redux";
-import {RouteComponentProps, withRouter} from "react-router";
+import {RouteComponentProps} from "react-router";
 import {Button, Card, CardBody, CardHeader, CardTitle, Col, Form, FormGroup, Input, Label} from "reactstrap";
-import {bindActionCreators} from "redux";
+import {bindActionCreators, Dispatch} from "redux";
 import {setObjects} from 'src/actions/firebaseActions';
+import {IApplicationState} from "../../reducers";
 import {FireBaseManager} from "../../utils/firebase";
 
 class Login extends React.Component<RouteComponentProps, any> {
@@ -59,12 +60,15 @@ class Login extends React.Component<RouteComponentProps, any> {
     }
 }
 
-function mapDispatchToProps(dispatch: any) {
-    return bindActionCreators({setObjects}, dispatch);
-}
+const actions = (dispatch: Dispatch) => bindActionCreators({
+    setObjects,
+}, dispatch);
 
-function mapStateToProps(state: any) {
-    return {isLoggedIn: state.authReducer.isLoggedIn};
-}
+const state = (s: IApplicationState) => ({
+    isLoggedIn: s.authReducer.get('isLoggedIn')
+});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default connect(
+    state,
+    actions
+)(Login);

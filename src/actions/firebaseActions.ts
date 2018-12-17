@@ -1,9 +1,8 @@
-import ObjectModel from "../models/ObjectModel";
-import {SET_OBJECTS} from "./types";
+import {FirebaseActionTypes} from "./firebaseTypes";
 
-export function setObjects(objects: ObjectModel[]) {
+export function setObjects(objects: InterfaceObjectModel[]) {
     return {
-        data: objects,
-        type: SET_OBJECTS
+        objects,
+        type: FirebaseActionTypes.SetObjects,
     };
 }

@@ -1,24 +1,20 @@
 import * as React from 'react';
 import {connect} from "react-redux";
 import {NavLink, RouteComponentProps, withRouter} from 'react-router-dom';
-import {
-    Collapse,
-    Nav,
-    Navbar,
-    NavbarBrand, NavbarToggler,
-    NavItem,
-    NavLink as BootstrapNavLink
-} from 'reactstrap';
-import {bindActionCreators} from "redux";
-import {FireBaseManager} from "../../utils/firebase";
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink as BootstrapNavLink} from 'reactstrap';
+import {bindActionCreators, Dispatch} from "redux";
 import {setCurrentUser} from "../../actions/authActions";
+import {IApplicationState} from "../../reducers";
+import {FireBaseManager} from "../../utils/firebase";
 
 interface IProps extends RouteComponentProps {
     isLoggedIn: boolean,
+    setCurrentUser: (user: any) => {},
+    user: any,
 }
 
 class NavBar extends React.Component<IProps, any> {
-    constructor(props: any) {
+    constructor(props: IProps) {
         super(props);
         this.state = {
             isOpen: false,
@@ -32,7 +28,10 @@ class NavBar extends React.Component<IProps, any> {
     };
 
     public signOut = () => {
-        FireBaseManager.signOut();
+        FireBaseManager.signOut().then(() => {
+            this.props.setCurrentUser(null);
+            this.props.history.push('/login');
+        });
     };
 
     public render() {
@@ -77,15 +76,16 @@ class NavBar extends React.Component<IProps, any> {
     }
 }
 
-function mapDispatchToProps(dispatch: any) {
-    return bindActionCreators({setCurrentUser}, dispatch);
-}
+const actions = (dispatch: Dispatch) => bindActionCreators({
+    setCurrentUser,
+}, dispatch);
 
-function mapStateToProps(state: any) {
-    return {
-        isLoggedIn: state.authReducer.isLoggedIn,
-        user: state.authReducer.currentUser,
-    };
-}
+const state = (s: IApplicationState) => ({
+    isLoggedIn: s.authReducer.get('isLoggedIn'),
+    user: s.authReducer.get('currentUser'),
+});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));
+export default withRouter(connect(
+    state,
+    actions
+)(NavBar));
