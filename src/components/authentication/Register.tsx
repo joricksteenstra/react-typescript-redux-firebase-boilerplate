@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {connect} from "react-redux";
 import {Button, Card, CardBody, CardHeader, CardTitle, Col, Form, FormGroup, Input, Label} from "reactstrap";
-import {bindActionCreators} from "redux";
+import {bindActionCreators, Dispatch} from "redux";
+import {IApplicationState} from "../../reducers";
 import {FireBaseManager} from "../../utils/firebase";
 
 class Register extends React.Component<any, any> {
@@ -51,12 +52,13 @@ class Register extends React.Component<any, any> {
     }
 }
 
-function mapDispatchToProps(dispatch: any) {
-    return bindActionCreators({}, dispatch);
-}
+const actions = (dispatch: Dispatch) => bindActionCreators({}, dispatch);
 
-function mapStateToProps(state: any) {
-    return {objects: state.firebaseReducer.objects};
-}
+const state = (s: IApplicationState) => ({
+    objects: s.firebaseReducer.get('objects')
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(
+    state,
+    actions
+)(Register);

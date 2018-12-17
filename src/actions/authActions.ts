@@ -1,5 +1,8 @@
-import {SET_CURRENT_USER} from "./types";
+import {AuthActionTypes} from "./authTypes";
 
 export function setCurrentUser(user: any) {
-    return {type: SET_CURRENT_USER, data: {user}}
+    return {
+        type: AuthActionTypes.SetCurrentUser,
+        user,
+    };
 }

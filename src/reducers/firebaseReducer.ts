@@ -1,25 +1,22 @@
-import {
-    SET_OBJECTS,
-} from '../actions/types';
+import {Record} from "immutable";
+import {Reducer} from "redux";
+import FirebaseTypes, {FirebaseActionTypes} from "../actions/firebaseTypes";
 
-interface IAction {
-    type: string,
-    data: any
+export interface IFirebaseReducerState {
+    objects: InterfaceObjectModel | null;
 }
 
-const initialState = {
-    objects: [],
-};
+const stateDefaults: Record.Factory<IFirebaseReducerState> = Record({
+    objects: null,
+});
 
-export default function (state = initialState, action: IAction) {
+const reducer: Reducer = (state: Record<IFirebaseReducerState> = stateDefaults(), action: FirebaseTypes) => {
     switch (action.type) {
-        case SET_OBJECTS:
-            return {
-                ...state,
-                objects: action.data
-            };
-
+        case FirebaseActionTypes.SetObjects:
+            return state.set('objects', action.objects);
         default:
             return state;
     }
-}
+};
+
+export default reducer;
